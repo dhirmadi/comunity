@@ -1,0 +1,28 @@
+name: Functional Requirement (FRD)
+description: Propose or update a functional requirement with acceptance criteria.
+labels: [spec, frd]
+body:
+  - type: input
+    id: frid
+    attributes:
+      label: FR‑ID
+      description: Unique requirement ID (e.g., FR‑101)
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+  - type: textarea
+    id: details
+    attributes:
+      label: Details & Rationale
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+  - type: checkboxes
+    id: links
+    attributes:
+      label: Links
+      options:
+        - label: References Product Brief / Feature List / Roadmap
+        - label: Mapped to MVP scope

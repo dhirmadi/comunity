@@ -1,0 +1,19 @@
+name: Safety/Moderation Change
+description: Update moderation governance or orchestration.
+labels: [safety]
+body:
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed Change
+  - type: textarea
+    id: impacts
+    attributes:
+      label: Impacts (roles, SLAs, logging, transparency)
+  - type: checkboxes
+    id: policy
+    attributes:
+      label: Policy Alignment
+      options:
+        - label: Consent/minors policy maintained
+        - label: Community transparency updated

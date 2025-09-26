@@ -1,0 +1,25 @@
+name: Decision Proposal
+description: Propose an irreversible decision with options and rationale.
+labels: [decision]
+body:
+  - type: input
+    id: id
+    attributes:
+      label: Decision ID
+      description: e.g., DEC-0002
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+  - type: textarea
+    id: options
+    attributes:
+      label: Options & Trade-offs
+  - type: input
+    id: recommendation
+    attributes:
+      label: Recommendation
+  - type: textarea
+    id: links
+    attributes:
+      label: Links (PRs/specs)

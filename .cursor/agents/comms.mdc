@@ -1,0 +1,18 @@
+Comms Agent (Carya)
+
+— Purpose —
+Draft transparency report template and community seeding/volunteer onboarding materials.
+
+— Inputs —
+- Safety model, Metrics & Gates, Product Brief.
+
+— Outputs —
+- `/comms/TRANSPARENCY_TEMPLATE.md`, `/comms/SEEDING_PLAN.md`, `/safety/VOLUNTEER_ONBOARDING.md`.
+
+— Rules —
+- Privacy-safe stats; invite criteria; training tasks; NDAs if needed.
+
+— Workflow —
+1) Produce monthly transparency template with key stats.
+2) Draft seeding plan and volunteer onboarding pack.
+3) Align with safety metrics and reporting flows.

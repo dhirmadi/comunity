@@ -1,0 +1,19 @@
+name: Data Model Change
+description: Propose ERD/DDL changes and migrations.
+labels: [data]
+body:
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed Change
+  - type: textarea
+    id: migration
+    attributes:
+      label: Migration Plan (up/down)
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy & Retention
+      options:
+        - label: PII minimization considered
+        - label: Retention schedule impact noted

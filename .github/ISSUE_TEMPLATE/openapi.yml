@@ -1,0 +1,21 @@
+name: OpenAPI Change
+description: Request additions or changes to `/api/openapi.yaml`.
+labels: [api, openapi]
+body:
+  - type: textarea
+    id: endpoints
+    attributes:
+      label: Endpoints & Schemas
+  - type: checkboxes
+    id: examples
+    attributes:
+      label: Examples
+      options:
+        - label: Request/response examples provided
+  - type: checkboxes
+    id: auth
+    attributes:
+      label: Auth & Errors
+      options:
+        - label: Cookie auth/CSRF covered
+        - label: Error envelope usage

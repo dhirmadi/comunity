@@ -1,0 +1,10 @@
+version: 0
+content_warnings:
+  - nsfw
+  - violence
+report_reasons:
+  - harassment
+  - hate
+  - non_consensual
+  - illegal
+  - spam

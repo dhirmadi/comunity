@@ -1,0 +1,24 @@
+name: Non-Functional Requirement (NFR/SLO)
+description: Define or update performance, reliability, security, privacy targets.
+labels: [spec, nfr]
+body:
+  - type: input
+    id: nfrid
+    attributes:
+      label: NFR‑ID
+      description: Unique ID (e.g., NFR‑201)
+  - type: textarea
+    id: targets
+    attributes:
+      label: Targets (quantified)
+  - type: textarea
+    id: monitoring
+    attributes:
+      label: Monitoring & Error Budgets
+  - type: checkboxes
+    id: compliance
+    attributes:
+      label: Compliance
+      options:
+        - label: GDPR/FADP considered
+        - label: Observability hooks defined

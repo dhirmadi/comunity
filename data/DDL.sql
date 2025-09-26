@@ -1,0 +1,3 @@
+-- DDL skeleton (see Product Brief §25 for reference design)
+-- Define tables: users, profiles, groups, group_members, posts, comments, follows, reports, blocks, audit_logs
+-- Include indexes for feed/search; soft-delete patterns; FTS optional.

@@ -1,0 +1,24 @@
+Spec-First Development Rules (Carya)
+
+— Purpose —
+Make spec artifacts the source of truth. Code changes must reference approved specs and decisions.
+
+— Rules —
+- Do not implement features without corresponding FRD/NFR entries and acceptance criteria.
+- Reference `governance/DECISIONS.md` for irreversible choices; add new entries as needed.
+- Maintain traceability: PRs must list FR‑IDs and link to spec files.
+- Keep scope tied to MVP unless roadmap/decision approves expansion.
+- Enforce safety, privacy, and legal constraints in all specs (CH/EU).
+
+— Required Artifacts (by phase) —
+- Phase 0: `governance/RACI.md`, `governance/DECISIONS.md`
+- Phase 1: `specs/FRD.md`, `specs/NFR_SLO.md`, `safety/Moderation_Governance.md`
+- Phase 2: `architecture/c4/*`, `data/DDL.sql`
+- Phase 3: `api/openapi.yaml`, `auth/policy.* (optional)`
+- Phase 4+: `ai/*`, `privacy/*`, `ops/*`, `qa/*`, `comms/*`
+
+— Workflow Prompts —
+- “Draft FRD for <feature> with FR‑IDs and acceptance.”
+- “Propose decision: <topic>; list options/trade‑offs; recommend.”
+- “Generate OpenAPI paths for <entity>; add examples; update `/api/openapi.yaml`.”
+- “Refine DDL for <entity>; propose migrations; update `/data/DDL.sql`.”
