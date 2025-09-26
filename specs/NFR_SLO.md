@@ -17,3 +17,8 @@ Accessibility
 
 Monitoring
 - Sentry; basic dashboards; error budgets defined.
+
+Error Budgets
+- Latency: 5% of minutes per 30d may breach p95 target
+- Uptime: 43 minutes per 30d budget
+- Moderation TTF: 10% items may exceed 12h

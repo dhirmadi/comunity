@@ -1,3 +1,20 @@
 @startuml
-title C4: System Context — Carya MVP
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(user, "User", "Adult member (18+)")
+System_Boundary(carya, "Carya MVP"){
+  System(web, "Web App (Django)", "Auth, Profiles, Groups, Posts, Comments, Mod tools")
+}
+System_Ext(storage, "Object Storage (S3/SOS)")
+System_Ext(email, "Email Provider")
+System_Ext(db, "Managed Postgres")
+
+Rel(user, web, "HTTPS")
+Rel(web, storage, "Signed URLs, media upload")
+Rel(web, db, "SQL")
+Rel(web, email, "Verification/Reset")
+
+SHOW_LEGEND()
 @enduml

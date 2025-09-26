@@ -4,6 +4,171 @@ info:
   version: 0.1.0
 servers:
   - url: https://api.example.ch
-paths: {}
 components:
-  schemas: {}
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+  schemas:
+    Error:
+      type: object
+      required: [error, code]
+      properties:
+        error: { type: string, example: "Validation failed" }
+        code: { type: string, example: "BAD_REQUEST" }
+        details:
+          type: object
+          additionalProperties: true
+          example: { field: "email", message: "invalid format" }
+    Profile:
+      type: object
+      properties:
+        id: { type: string, example: "u_123" }
+        display_name: { type: string, example: "River" }
+        bio: { type: string, example: "Hello Carya" }
+        avatar_url: { type: string, example: "https://cdn.example.ch/a/u_123.png" }
+    Group:
+      type: object
+      properties:
+        id: { type: string, example: "g_9" }
+        name: { type: string, example: "Consent Education" }
+        slug: { type: string, example: "consent-education" }
+        visibility: { type: string, enum: [public, private], example: "public" }
+    Post:
+      type: object
+      properties:
+        id: { type: string, example: "p_42" }
+        author_id: { type: string, example: "u_123" }
+        group_id: { type: string, example: "g_9" }
+        body_md: { type: string, example: "**Welcome** to the group!" }
+        images:
+          type: array
+          items: { type: string }
+          example: ["s3://bucket/key1.jpg"]
+        created_at: { type: string, format: date-time, example: "2025-09-26T10:00:00Z" }
+paths:
+  /api/v1/auth/login:
+    post:
+      summary: Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, example: "user@example.com" }
+                password: { type: string, example: "hunter2" }
+      responses:
+        '200': { description: OK }
+        '400': { description: Bad Request, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+        '401': { description: Unauthorized, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+  /api/v1/profile/{id}:
+    get:
+      summary: Get profile
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      security:
+        - cookieAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Profile' }
+              examples:
+                example1:
+                  value: { id: "u_123", display_name: "River", bio: "Hello Carya", avatar_url: "https://cdn.example.ch/a/u_123.png" }
+        '401': { description: Unauthorized, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+  /api/v1/groups:
+    post:
+      summary: Create group
+      security: [ { cookieAuth: [] } ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, visibility]
+              properties:
+                name: { type: string, example: "Consent Education" }
+                visibility: { type: string, enum: [public, private], example: "public" }
+      responses:
+        '201': { description: Created }
+        '400': { description: Bad Request, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+        '401': { description: Unauthorized, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+    get:
+      summary: List groups
+      parameters:
+        - name: query
+          in: query
+          schema: { type: string }
+      responses:
+        '200': { description: OK }
+        '400': { description: Bad Request, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+  /api/v1/posts:
+    post:
+      summary: Create post
+      security: [ { cookieAuth: [] } ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [group_id, body_md]
+              properties:
+                group_id: { type: string, example: "g_9" }
+                body_md: { type: string, example: "**Welcome** to the group!" }
+                images:
+                  type: array
+                  items: { type: string }
+                  example: ["s3://bucket/key1.jpg"]
+      responses:
+        '201': { description: Created }
+        '400': { description: Bad Request, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+        '401': { description: Unauthorized, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+  /api/v1/comments:
+    post:
+      summary: Create comment
+      security: [ { cookieAuth: [] } ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [post_id, body_md]
+              properties:
+                post_id: { type: string, example: "p_42" }
+                body_md: { type: string, example: "Nice post!" }
+      responses:
+        '201': { description: Created }
+        '400': { description: Bad Request, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+        '401': { description: Unauthorized, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+  /api/v1/reports:
+    post:
+      summary: Submit report
+      security: [ { cookieAuth: [] } ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [subject_type, subject_id, reason]
+              properties:
+                subject_type: { type: string, enum: [user, post, comment], example: "post" }
+                subject_id: { type: string, example: "p_42" }
+                reason: { type: string, example: "harassment" }
+                details: { type: string, example: "link to evidence" }
+      responses:
+        '201': { description: Created }
+        '400': { description: Bad Request, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+        '401': { description: Unauthorized, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }

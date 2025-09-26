@@ -1,3 +1,16 @@
 @startuml
-title C4: Components — Carya MVP
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+Container_Boundary(web, "Django App"){
+  Component(auth, "Auth", "django-allauth")
+  Component(profiles, "Profiles")
+  Component(groups, "Groups")
+  Component(posts, "Posts & Comments")
+  Component(moderation, "Moderation & Audit")
+  Component(admin, "Admin")
+}
+
+SHOW_LEGEND()
 @enduml

@@ -41,3 +41,8 @@ Purpose: Translate the Feature List into atomic, testable requirements with trac
 
 ## Out of Scope (MVP)
 - Video, DMs, realtime notifications, advanced search, native apps.
+
+- FR-009 Rate Limits
+  - Summary: Per-IP and per-user limits for signup/login/post/comment/report/search.
+  - Acceptance: 429 with Retry-After; configurable; logged; safe defaults.
+  - Traceability: Product Brief §26.

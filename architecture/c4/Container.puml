@@ -1,3 +1,20 @@
 @startuml
-title C4: Containers — Carya MVP
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(user, "User")
+System_Boundary(carya, "Carya MVP"){
+  Container(web, "Django App", "Python/Django", "HTTP, templates/API, moderation")
+  ContainerDb(pg, "Postgres", "Managed Postgres", "Primary data store")
+  Container(storage, "Object Storage", "S3/SOS", "Media files (private)")
+  Container_Ext(redis, "Redis*", "Optional", "Cache, rate limits")
+}
+
+Rel(user, web, "HTTPS")
+Rel(web, pg, "ORM/SQL")
+Rel(web, storage, "boto3 signed URLs")
+Rel(web, redis, "cache/limits")
+
+SHOW_LEGEND()
 @enduml
