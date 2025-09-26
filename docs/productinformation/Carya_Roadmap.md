@@ -4,13 +4,15 @@ _Last updated: 2025-09-26_
 
 > Delivery is **incremental**, safety-first, with automated/community moderation from day one. Phases are outcomes-based, not date-based; advance when KPIs and safety gates are met.
 
+> Scope decisions: DMs/Events are Post‑MVP per DEC‑0001.
+
 ---
 
 ## Phase 0 — Foundations (Weeks 1–2)
 **Goals:** Repo + CI/CD, EU/CH hosting choice, auth skeleton, minimal UI.
 
 **Deliverables**
-- Containerized monolith (Django/Rails), baseline models (users, profiles, groups, posts, comments).
+- Containerized monolith (Django), baseline models (users, profiles, groups, posts, comments).
 - Email verification, password reset; age gate; consent/ToS acceptance.
 - Object storage wiring; image upload; EXIF strip; per-post visibility.
 - Postgres FTS search (basic).
@@ -31,7 +33,6 @@ _Last updated: 2025-09-26_
 - Posts (text + up to 5 images), comments, likes.
 - Friends/follow; **Home feed** (reverse-chron from follows/groups).
 - **Reports** + queue; community quorum proto; block/mute; word filters.
-- Events (basic create/RSVP/list) without ticketing.
 
 **Safety Automation v1**
 - Upload pipeline: MIME allowlist, EXIF strip, size limits, simple NSFW classifier, spam heuristics.
@@ -46,6 +47,7 @@ _Last updated: 2025-09-26_
 **Goals:** Scale moderation without staff; improve discovery; polish.
 
 **Deliverables**
+- Events (basic create/RSVP/list) without ticketing. (DEC‑0001)
 - Messaging (DMs) with inbox privacy filters and message requests.
 - Explore/Trending (safe-mode toggle); location-based discovery (opt-in city/region).
 - Group automod: slow mode, first-post approval, link spam detection.

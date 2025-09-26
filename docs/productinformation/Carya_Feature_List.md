@@ -59,7 +59,7 @@ _Last updated: 2025-09-26_
 ## 4) Content Types
 **Parity with FetLife**
 - **Writings/Blog entries** (long-form posts).
-- **Photos** and **Videos** uploads; per-post visibility (friends-only / all members).
+- **Photos** uploads (MVP) and **Videos** (Post‑MVP); per‑post visibility (friends‑only / all members).
 - **Comments** on posts; likes/favorites.
 - **Kinky & Popular / trending** type discovery feed.
 - **Home feed** showing activity of friends/followed users and groups.
@@ -88,7 +88,7 @@ _Last updated: 2025-09-26_
 
 ---
 
-## 6) Events
+## 6) Events (Post‑MVP, DEC‑0001)
 **Parity with FetLife**
 - Create/advertise **events** (munches, classes, parties) with time, location, RSVP.
 - Attendee lists, comments.
@@ -101,7 +101,7 @@ _Last updated: 2025-09-26_
 
 ---
 
-## 7) Messaging (DMs/Conversations)
+## 7) Messaging (DMs/Conversations) (Post‑MVP, DEC‑0001)
 **Parity with FetLife**
 - Private **direct messages** (1:1 and group threads).
 
@@ -113,7 +113,7 @@ _Last updated: 2025-09-26_
 
 ---
 
-## 8) Search & Discovery
+## 8) Search & Discovery (MVP: simple; enhancements later)
 **Parity with FetLife**
 - Limited **member search**, group/event discovery (location-based).
 - Tagging of writings; discover feeds (e.g., “Kinky & Popular”).
@@ -213,9 +213,9 @@ _Last updated: 2025-09-26_
 - Profiles with orientation/roles/fetishes → ✅ Carya Profiles & Consent Profile.
 - Friends/Follow + Home feed → ✅ Social Graph & Notifications.
 - Groups (forums) → ✅ Groups with rules, join gates, automod.
-- Events (create/RSVP) → ✅ Events with consent checklist.
-- Writings/Photos/Videos with per-post visibility → ✅ Content types; blur & CW.
-- DMs/Conversations → ✅ Messaging with privacy filters.
+- Events (create/RSVP) → ✅ Events with consent checklist (Post‑MVP, DEC‑0001).
+- Writings/Photos with per‑post visibility (MVP); Video (Post‑MVP, DEC‑0001) → ✅ Content types; blur & CW.
+- DMs/Conversations → ✅ Messaging with privacy filters (Post‑MVP, DEC‑0001).
 - Trending (“Kinky & Popular”) → ✅ Explore/Trending with safe-mode.
 - Location-based discovery → ✅ Local discovery (opt-in granularity).
 - Blocking & Reporting → ✅ Expanded with evidence, community quorum.
