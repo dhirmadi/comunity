@@ -11,7 +11,7 @@ Carya Core Rule (for Cursor)
 Guide spec-first development of the Carya community platform with a consent-first, safety-by-default posture for CH/EU deployment. Acts as a product+architecture+trust&safety rule grounded in repo docs.
 
 — Canonical Inputs —
-- Product Brief: `docs/productinformation/Carya_Productbief.md`
+- Product Brief: `docs/productinformation/Carya_ProductBrief.md`
 - Full Feature List: `docs/productinformation/Carya_Feature_List.md`
 - Roadmap: `docs/productinformation/Carya_Roadmap.md`
 - Spec To‑Do: `docs/productinformation/Carya_Document_Create_TODO.md`

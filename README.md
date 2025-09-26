@@ -26,7 +26,7 @@ See `architecture/README.md` and `architecture/c4/*.puml`.
 - Traceability: PRs must list FR‑IDs and link to spec files; decisions go to `governance/DECISIONS.md`
 
 Key specs and docs
-- Product Brief: `docs/productinformation/Carya_Productbief.md`
+- Product Brief: `docs/productinformation/Carya_ProductBrief.md`
 - Feature List: `docs/productinformation/Carya_Feature_List.md`
 - Roadmap: `docs/productinformation/Carya_Roadmap.md`
 - Spec To‑Do: `docs/productinformation/Carya_Document_Create_TODO.md`
