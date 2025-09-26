@@ -22,7 +22,7 @@ Context: Feature List describes DMs; Product Brief excludes DMs from MVP.
 Options: A) Post‑MVP (Alpha) [Recommended], B) Include in MVP
 Decision: A) Post‑MVP (Alpha)
 Rationale: Safety load and non‑core to MVP loops; reduces complexity.
-Links: specs/FRD.md, docs/productinformation/Carya_Productbief.md
+Links: specs/FRD.md, docs/productinformation/Carya_ProductBrief.md
 
 ## DEC-0002 — UI approach (HTMX vs minimal React)
 Date: 2025-09-26
@@ -46,7 +46,7 @@ Context: Need high deliverability EU provider.
 Options: A) Postmark [Recommended], B) SES (EU)
 Decision: A) Postmark
 Rationale: Simplicity, strong deliverability, EU endpoints.
-Links: docs/productinformation/Carya_Productbief.md
+Links: docs/productinformation/Carya_ProductBrief.md
 
 ## DEC-0005 — API auth (cookie+CSRF vs JWT)
 Date: 2025-09-26

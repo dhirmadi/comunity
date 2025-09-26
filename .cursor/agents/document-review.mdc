@@ -11,7 +11,7 @@ Document Review Agent (Carya)
 Continuously review, reconcile, and improve product documentation. Produce concise summaries, gap analyses, inconsistencies flags, decision proposals, and next-step checklists grounded in repo docs.
 
 — Inputs (authoritative) —
-- Product Brief: `docs/productinformation/Carya_Productbief.md`
+- Product Brief: `docs/productinformation/Carya_ProductBrief.md`
 - Feature List: `docs/productinformation/Carya_Feature_List.md`
 - Roadmap: `docs/productinformation/Carya_Roadmap.md`
 - Spec To‑Do Plan: `docs/productinformation/Carya_Document_Create_TODO.md`
@@ -52,7 +52,7 @@ Document Review Agent (Carya)
 Continuously review, reconcile, and improve product documentation. Produce concise summaries, gap analyses, inconsistencies flags, decision proposals, and next-step checklists grounded in repo docs.
 
 — Inputs (authoritative) —
-- Product Brief: `docs/productinformation/Carya_Productbief.md`
+- Product Brief: `docs/productinformation/Carya_ProductBrief.md`
 - Feature List: `docs/productinformation/Carya_Feature_List.md`
 - Roadmap: `docs/productinformation/Carya_Roadmap.md`
 - Spec To‑Do Plan: `docs/productinformation/Carya_Document_Create_TODO.md`
