@@ -1,4 +1,11 @@
 ---
+name: "Spec-First Rule"
+description: "Spec-first workflow rule; always applied across the repo."
+type: always
+alwaysApply: true
+---
+
+---
 alwaysApply: true
 ---
 

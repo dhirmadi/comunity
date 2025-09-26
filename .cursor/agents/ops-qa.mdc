@@ -1,5 +1,7 @@
 ---
-alwaysApply: false
+name: "ops-qa Agent"
+description: "Custom agent for ops-qa tasks in this repo."
+type: agent_requested
 ---
 
 Ops & QA Agent (Carya)
