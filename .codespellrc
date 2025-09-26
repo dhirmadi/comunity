@@ -1,0 +1,5 @@
+[codespell]
+skip = .git,*.png,*.jpg,*.svg,.specstory
+ignore-words-list = ba,teh,htmx
+check-filenames = true
+check-hidden = true

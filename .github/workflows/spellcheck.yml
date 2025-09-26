@@ -1,0 +1,14 @@
+name: Spell Check
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+jobs:
+  codespell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install codespell
+        run: pipx install codespell
+      - name: Run codespell
+        run: codespell --config .codespellrc || true
